@@ -1,7 +1,11 @@
 
 name: Nextflow test
 
-on: [push]
+on:
+  push:
+  pull_request:
+    types: [opened, reopened]
+  workflow_dispatch:
 
 jobs:
   test:
