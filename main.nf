@@ -245,6 +245,9 @@ process DOWNLOAD_GENOME {
    tag "${accession}"
    label 'some_mem'
 
+   // errorStrategy 'retry'  // sometimes download fails
+   // maxRetries 2
+
    input:
    val accession
 
@@ -253,7 +256,8 @@ process DOWNLOAD_GENOME {
 
    script:
    """
-   wget "https://api.ncbi.nlm.nih.gov/datasets/v2alpha/genome/accession/${accession}/download?include_annotation_type=GENOME_FASTA&include_annotation_type=GENOME_GFF&include_annotation_type=RNA_FASTA&include_annotation_type=CDS_FASTA&include_annotation_type=PROT_FASTA&include_annotation_type=SEQUENCE_REPORT&hydrated=FULLY_HYDRATED" -O genome-out
+   curl "https://api.ncbi.nlm.nih.gov/datasets/v2alpha/genome/accession/${accession}/download?include_annotation_type=GENOME_FASTA&include_annotation_type=GENOME_GFF&include_annotation_type=RNA_FASTA&include_annotation_type=CDS_FASTA&include_annotation_type=PROT_FASTA&include_annotation_type=SEQUENCE_REPORT&hydrated=FULLY_HYDRATED" \
+   > genome-out
    unzip genome-out ncbi_dataset/data/${accession}/{${accession}_*_genomic.fna,*.gff,cds_from_genomic.fna,protein.faa}
    """
 }
