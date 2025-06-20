@@ -14,6 +14,7 @@ dependencies:
     - bioconda::mosdepth
     - bioconda::perl-uri
     - bioconda::samtools
+    - conda-forge::ca-certificates
     - conda-forge::curl
     - conda-forge::git
     - conda-forge::gnuplot
