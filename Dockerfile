@@ -11,6 +11,7 @@ RUN mkdir -p $HOME/.conda && chown -R 1000:1000 $HOME
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     ca-certificates \
+    curl \
     gcc \
     g++ \
     && update-ca-certificates \
