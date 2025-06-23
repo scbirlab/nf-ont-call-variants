@@ -245,8 +245,6 @@ process DOWNLOAD_GENOME {
    tag "${accession}"
    label 'some_mem'
 
-   containerOptions '--network=none'
-
    input:
    val accession
 
