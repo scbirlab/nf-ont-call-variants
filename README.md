@@ -98,10 +98,10 @@ the `-latest` flag.
 nextflow run scbirlab/nf-ont-call-variants -latest
 ```
 
-If you want to run a particular tagged version of the pipeline, such as `v0.0.2`, you can do so using
+If you want to run a particular tagged version of the pipeline, such as `v0.0.4`, you can do so using
 
 ```bash 
-nextflow run scbirlab/nf-ont-call-variants -r v0.0.2
+nextflow run scbirlab/nf-ont-call-variants -r v0.0.4
 ```
 
 For help, use `nextflow run scbirlab/nf-ont-call-variants --help`.
