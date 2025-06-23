@@ -18,6 +18,7 @@ dependencies:
     - conda-forge::curl
     - conda-forge::git
     - conda-forge::gnuplot
+    - conda-forge::ncbi-datasets-cli
     - conda-forge::openjdk
     - conda-forge::openssl
     - conda-forge::unzip
