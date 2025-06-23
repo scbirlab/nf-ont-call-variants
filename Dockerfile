@@ -10,8 +10,10 @@ RUN echo "user:x:1001:1001::/home/user:/bin/bash" >> /etc/passwd && \
 RUN mkdir -p $HOME/.conda && chown -R 1000:1000 $HOME
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    ca-certificates \
     gcc \
     g++ \
+    && update-ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 USER 1000
 
